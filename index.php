@@ -26,12 +26,14 @@
         <?php } ?>
 
         <label for="username">Username</label>
-        <input type="text" name="username" placeholder="inserisci il tuo Username"> <br>
+        <input type="text" name="email" placeholder="inserisci il tuo Username" value="email@email.email"> <br>
 
         <label for="password">Password</label>
-        <input type="password" name="password" placeholder="inserisci la password"> <br>
+        <input type="password" name="password" placeholder="inserisci la password" value="password"> <br>
 
-        <button type="submit">Login</button>
+        <button type="submit">Login</button> <br>
+
+        <p>Non hai un account? Registrati <a href="register.php">qui</a> </p>
 
     </form>
 
