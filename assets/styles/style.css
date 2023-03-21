@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
   background-color: lightskyblue;
 }
@@ -9,4 +15,8 @@ body{
   width: 95%;
   border-radius: 5px;
   margin: 20px auto;
+}
+
+header{
+  background-color: white;
 }
