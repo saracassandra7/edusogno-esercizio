@@ -12,20 +12,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $password = test_input($_POST["password"]);
   $password = password_hash($password, PASSWORD_DEFAULT);
 
-  //Preparazione query
-  $q = $conn->prepare("INSERT INTO utenti (nome, cognome, email, password) VALUES (:firstname, :lastname, :email, :password)");
+  //preparo la query
+  $stmt = $conn->prepare("SELECT * FROM utenti WHERE email = :email");
+  $stmt->execute(['email' => $email]);
+  $control = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  
+  //Controllo se l'email è già esistente
+  if($stmt->rowCount() > 0){
+    echo 'email già esistente';
+  }else{
+    //registro il nuovo utente
+    $q = $conn->prepare("INSERT INTO utenti (nome, cognome, email, password) VALUES (:firstname, :lastname, :email, :password)");
+  
+    //binding
+    $q->bindParam(':firstname', $firstname);
+    $q->bindParam(':lastname', $lastname);
+    $q->bindParam(':email', $email); 
+    $q->bindParam(':password', $password); 
+  
+    //esecuzione
+    $q->execute(); // eseguo la query
 
-  //binding
-  $q->bindParam(':firstname', $firstname);
-  $q->bindParam(':lastname', $lastname);
-  $q->bindParam(':email', $email); 
-  $q->bindParam(':password', $password); 
+    //salvo l'ultimo id inserito in sessione
+    $_SESSION['id'] = $conn->lastInsertId();
+  
+    // header('Location: home.php');
+    header('Location: home.php');
+  };
 
-  //esecuzione
-  $q->execute(); // eseguo la query
-
-  // header('Location: home.php');
-  header('Location: index.php');
 }
 
 function test_input($data) {
