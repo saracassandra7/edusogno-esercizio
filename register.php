@@ -49,8 +49,10 @@ function test_input($data) {
   <title>Edusogno</title>
 </head>
 <body>
-  <form action="register.php" method="post">
-    <h2>Registrati</h2>
+  <div class="container">
+    <h1>Crea il tuo account</h1>
+    <div class="form-container">
+    <form action="register.php" method="post">
     <div>
       <label for="firstname">Nome</label>
       <input type="text" name="firstname" id="firstname" value="nome">
@@ -73,7 +75,9 @@ function test_input($data) {
 
     <button type="submit">Register</button>
     <p>Hai già un account? Accedi <a href="index.php">qui</a></p>
-  </form>
+    </form>
+    </div>
+  </div>
   
 </body>
 </html>

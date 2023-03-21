@@ -4,10 +4,26 @@
   box-sizing: border-box;
 }
 
-body{
-  background-color: lightskyblue;
+.container{
+  width: 90%;
+  margin: 0 auto;
 }
 
+body{
+  background-color: lightskyblue;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1{
+  margin: 50px 0px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 99.5%;
+  text-align: center;
+  color: #134077;
+}
+
+/* da togliere */
 .error {
   background: #f0b0b0;
   color: #0c0101;
@@ -17,6 +33,11 @@ body{
   margin: 20px auto;
 }
 
-header{
-  background-color: white;
+.form-container{
+  margin: 0 auto;
+  border: 1px solid #134077;
+  background: #FFFFFF;
+  border-radius: 19px;
+  padding: 30px 20px;
+  width: 60%;
 }

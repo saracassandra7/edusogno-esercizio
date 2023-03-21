@@ -18,8 +18,10 @@
 </head>
 
 <body>
-    <h2>LOGIN</h2>
-    <form action="login.php" method="POST">
+  <div class="container">
+  <h1>Hai già un account?</h1>
+  <div class="form-container">
+  <form action="login.php" method="POST">
         <!-- token csrf -->
         <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
 
@@ -38,6 +40,8 @@
         <p>Non hai un account? Registrati <a href="register.php">qui</a> </p>
 
     </form>
+  </div>
+  </div>
 
 
 </body>
