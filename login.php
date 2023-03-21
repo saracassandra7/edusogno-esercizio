@@ -1,6 +1,7 @@
 <?php
   session_start();
   include "db_conn.php";
+  include "register.php";
 
   function validate($data){
     $data = trim($data);

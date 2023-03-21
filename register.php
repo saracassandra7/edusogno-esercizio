@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $lastname = test_input($_POST["lastname"]);
   $email = test_input($_POST["email"]);
   $password = test_input($_POST["password"]);
+  $password = password_hash($password, PASSWORD_DEFAULT);
 
   //Preparazione query
   $q = $conn->prepare("INSERT INTO utenti (nome, cognome, email, password) VALUES (:firstname, :lastname, :email, :password)");
