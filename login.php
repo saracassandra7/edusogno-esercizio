@@ -1,7 +1,6 @@
 <?php
-  session_start();
   include "db_conn.php";
-  include "register.php";
+  // include "register.php";
 
   function validate($data){
     $data = trim($data);
@@ -23,9 +22,9 @@
       $email = validate($_POST['email']);
       $password = validate($_POST['password']);
 
-      $q = $conn->prepare("SELECT * FROM utenti WHERE email = :email AND password = :password");
+      $q = $conn->prepare("SELECT * FROM utenti WHERE email = :email");
       $q->bindParam(':email', $email); 
-      $q->bindParam(':password', $password); 
+      // $q->bindParam(':password', $password); 
     
       //esecuzione
       $q->execute(); // eseguo la query
@@ -33,13 +32,18 @@
       $row = $q->fetch();
 
       if ($row) {
-        header('Location: home.php');
-      } else {
+        if (password_verify($password, $row['password'])) {
+        //Imposto la variabile di sessione con l'id dell'utente
+        $_SESSION['id'] = $row['id'];
 
-        echo 'utente non trovato'; die;
+        //Reindirizzo l'utente alla sua pagina di profilo
+        header('Location: home.php');
+        }
       }
 
-      var_dump($row); die;
+      echo 'utente non trovato'; die;
+
+      // var_dump($row); die;
 
       if(empty($username)){
         header("Location: index.php?error=Username is required");

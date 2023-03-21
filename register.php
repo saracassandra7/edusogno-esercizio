@@ -1,5 +1,6 @@
 <?php
 include 'db_conn.php';
+include 'partials/header.html';
 
 $firstname = $lastname = $email = $password = "";
 
@@ -23,7 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //esecuzione
   $q->execute(); // eseguo la query
 
-  header('Location: home.php');
+  // header('Location: home.php');
+  header('Location: index.php');
 }
 
 function test_input($data) {

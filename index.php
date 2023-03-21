@@ -1,5 +1,7 @@
 <?php
+  include 'partials/header.html';
   session_start();
+
   $token = bin2hex(random_bytes(32));
   $_SESSION['csrf_token'] = $token;
 ?>
@@ -17,7 +19,7 @@
 
 <body>
     <h2>LOGIN</h2>
-    <form action="login.php" method="post">
+    <form action="login.php" method="POST">
         <!-- token csrf -->
         <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
 
