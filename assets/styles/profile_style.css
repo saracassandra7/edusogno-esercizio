@@ -1,0 +1,69 @@
+body{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.welcome-title{
+  margin: 50px 0px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 99.5%;
+  /* identical to box height, or 32px */
+  text-align: center;
+  color: #134077;
+}
+
+.event-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card{
+  border: 1px solid #134077;
+  width: 320px;
+  height: 220px;
+  background: #FFFFFF;
+  border-radius: 19px;
+  padding: 30px 20px;
+
+}
+
+.event-name{
+ font-style: normal;
+ font-weight: 700;
+ font-size: 30px;
+ line-height: 99.5%;
+ color: #231F20;
+ margin-bottom: 20px;
+}
+
+.card p{
+  color: #CCCCCC;
+}
+
+.btn{
+  margin-top: 20px;
+  width: 90%;
+  height: 50px;
+  background: #0057FF;
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn span{
+  color: white;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.logout{
+  margin: 50px 0;
+  text-align: center;
+}

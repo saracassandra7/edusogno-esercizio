@@ -32,25 +32,31 @@ $row = $query->fetch(PDO::FETCH_ASSOC);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/styles/style.css">
+  <link rel="stylesheet" href="./assets/styles/profile_style.css">
   <title>Edusogno</title>
 </head>
 <body>
   <div class="container">
-    <h1>Ciao <?php echo $row['nome'] . ' ' . $row['cognome'] ?>, ecco i tuoi eventi</h1>
-    <br>
+    <h1 class="welcome-title">Ciao <?php echo $row['nome'] . ' ' . $row['cognome'] ?>, ecco i tuoi eventi</h1>
 
-    <div>
-	    <ul>
-		    <?php
-          //recupero dati dalla tabella eventi
-			    $email = $row['email'];
-			    $stmt = $conn->query("SELECT * FROM eventi WHERE attendees LIKE '%{$email}%' ");
+    <div class="event-container">
+    <?php
+      //recupero dati dalla tabella eventi
+			$email = $row['email'];
+			$stmt = $conn->query("SELECT * FROM eventi WHERE attendees LIKE '%{$email}%' ");
 
-			    while ($event_row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-				    echo "<li>" . $event_row['nome_evento'] . " - " . $event_row['data_evento'] . "</li>";
-			    }
-		    ?>
-	    </ul>
+			while ($event_row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+				echo "<div class='card'>" 
+          . '<h2 class="event-name">'. $event_row['nome_evento'] . '</h2>' 
+          .'<p>'. $event_row['data_evento'] . '</p>' 
+          . '<div class="btn"><span>JOIN</span></div>' .
+        "</div>";
+			}
+		?>
+    </div>
+
+    <div class="logout">
+      <a href="logout.php">Logout</a>
     </div>
   </div>
   
