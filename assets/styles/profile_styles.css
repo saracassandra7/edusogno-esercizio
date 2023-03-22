@@ -25,7 +25,7 @@ body{
   border: 1px solid #134077;
   width: 320px;
   height: 220px;
-  background: #FFFFFF;
+  background: white;
   border-radius: 19px;
   padding: 30px 20px;
 
@@ -56,13 +56,37 @@ body{
   cursor: pointer;
 }
 
+.btn:hover{
+  opacity: 0.8;
+}
+
 .btn span{
   color: white;
   font-weight: 700;
   font-size: 1.05rem;
 }
 
+.logout-container{
+  display: flex;
+  justify-content: center;
+}
+
 .logout{
   margin: 50px 0;
   text-align: center;
+  padding: 15px 25px;
+  color: #134077;
+  border: 1px solid ;
+  display: inline-block;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.logout:hover{
+  background-color: rgb(163, 203, 235);
+}
+
+.logout a{
+  text-decoration: none;
+  color: #134077;
 }

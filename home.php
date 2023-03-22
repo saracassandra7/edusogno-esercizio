@@ -31,13 +31,17 @@ $row = $query->fetch(PDO::FETCH_ASSOC);
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/styles/style.css">
-  <link rel="stylesheet" href="./assets/styles/profile_style.css">
+  <link rel="stylesheet" href="./assets/styles/general.css">
+  <link rel="stylesheet" href="./assets/styles/profile_styles.css">
   <title>Edusogno</title>
 </head>
 <body>
   <div class="container">
-    <h1 class="welcome-title">Ciao <?php echo $row['nome'] . ' ' . $row['cognome'] ?>, ecco i tuoi eventi</h1>
+    <?php if(!empty($event_row)) : ?>
+      <h1 class="welcome-title">Ciao <?php echo $row['nome'] . ' ' . $row['cognome'] ?>, ecco i tuoi eventi</h1>
+    <?php else : ?>
+      <h1 class="welcome-title">Ciao <?php echo $row['nome'] . ' ' . $row['cognome'] ?>, non hai nessun evento in programma</h1>
+    <?php endif ?>
 
     <div class="event-container">
     <?php
@@ -55,8 +59,10 @@ $row = $query->fetch(PDO::FETCH_ASSOC);
 		?>
     </div>
 
+    <div class="logout-container">
     <div class="logout">
       <a href="logout.php">Logout</a>
+    </div>
     </div>
   </div>
   
