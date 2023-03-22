@@ -14,6 +14,7 @@ body{
   margin: 0 auto;
 }
 
+/* messaggi di feedback */
 #feedback-container.hidden {
   display: none;
 }
@@ -36,16 +37,8 @@ h1{
   color: #134077;
 }
 
-/* da togliere */
-.error {
-  background: #f0b0b0;
-  color: #0c0101;
-  padding: 10px;
-  width: 95%;
-  border-radius: 5px;
-  margin: 20px auto;
-}
 
+/* forms */
 .form-container{
   margin: 0 auto;
   border: 1px solid #134077;
@@ -53,4 +46,47 @@ h1{
   border-radius: 19px;
   padding: 30px 20px;
   width: 60%;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.form-container label{
+  font-size: 15px;
+  display:block;
+  text-align: left;
+  line-height: 99.5%;
+  margin:20px 15px;
+  font-weight: 700;
+}
+
+.form-container input{
+  width:95%;
+  border:none;
+  border-bottom:1px solid #134077;
+  margin:10px 0;
+  font-size: 20px;
+}
+
+.form-container button{
+  display: block;
+  background: #0057FF; 
+  border:none;
+  border-radius: 11px;
+  width:95%;
+  height: 55px;
+  color:white;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 30px 15px;
+  cursor: pointer;
+}
+
+.form-container button:hover{
+  opacity: .8;
+}
+
+.form-container p{
+  color: #134077;
+  padding-bottom: 30px;
 }

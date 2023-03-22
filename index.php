@@ -38,7 +38,7 @@
 
         <button type="submit">Login</button> <br>
 
-        <p>Non hai un account? Registrati <a href="register.php">qui</a> </p>
+        <p>Non hai ancora un profilo? <a href="register.php">Registrati</a></p>
 
     </form>
   </div>

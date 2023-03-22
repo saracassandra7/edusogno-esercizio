@@ -90,27 +90,27 @@ function test_input($data) {
     <div class="form-container">
     <form action="register.php" method="post">
     <div>
-      <label for="firstname">Nome</label>
+      <label for="firstname">Inserisci il nome*</label>
       <input type="text" name="firstname" id="firstname" value="nome">
     </div>
 
     <div>
-      <label for="lastname">Cognome</label>
+      <label for="lastname">Inserisci il cognome*</label>
       <input type="text" name="lastname" id="lastname" value="cognome">
     </div>
 
     <div>
-      <label for="email">Email:</label>
+      <label for="email">Inserisci l'email*</label>
       <input type="email" name="email" id="email" value="email@email.email">
     </div>
 
     <div>
-      <label for="password">Password:</label>
+      <label for="password">Inserisci la password*</label>
       <input type="password" name="password" id="password" value="password">
     </div>
 
-    <button type="submit">Register</button>
-    <p>Hai già un account? Accedi <a href="index.php">qui</a></p>
+    <button type="submit">Registrati</button>
+    <p>Hai già un account? <a href="index.php">Accedi</a></p>
     </form>
     </div>
   </div>
