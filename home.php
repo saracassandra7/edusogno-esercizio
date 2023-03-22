@@ -37,11 +37,8 @@ $row = $query->fetch(PDO::FETCH_ASSOC);
 </head>
 <body>
   <div class="container">
-    <?php if(!empty($event_row)) : ?>
-      <h1 class="welcome-title">Ciao <?php echo $row['nome'] . ' ' . $row['cognome'] ?>, ecco i tuoi eventi</h1>
-    <?php else : ?>
-      <h1 class="welcome-title">Ciao <?php echo $row['nome'] . ' ' . $row['cognome'] ?>, non hai nessun evento in programma</h1>
-    <?php endif ?>
+
+    <h1 class="welcome-title">Ciao <?php echo $row['nome'] . ' ' . $row['cognome'] ?>, ecco i tuoi eventi</h1>
 
     <div class="event-container">
     <?php
@@ -49,7 +46,7 @@ $row = $query->fetch(PDO::FETCH_ASSOC);
 			$email = $row['email'];
 			$stmt = $conn->query("SELECT * FROM eventi WHERE attendees LIKE '%{$email}%' ");
 
-			while ($event_row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+      while ($event_row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 				echo "<div class='card'>" 
           . '<h2 class="event-name">'. $event_row['nome_evento'] . '</h2>' 
           .'<p>'. $event_row['data_evento'] . '</p>' 
