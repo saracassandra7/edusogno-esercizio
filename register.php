@@ -17,9 +17,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $stmt->execute(['email' => $email]);
   $control = $stmt->fetchAll(PDO::FETCH_ASSOC);
   
+  //controllo che l'utente riempia tutti i campi
+  if(empty($firstname)){
+    $msg = "Il nome è un campo obbligatorio";
+    header("Location: register.php#$msg");
+    exit();
+  }
+  if(empty($lastname)){
+    $msg = "Il cognome è un campo obbligatorio";
+    header("Location: register.php#$msg");
+    exit();
+  }  if(empty($email)){
+    $msg = "L'email è un campo obbligatorio";
+    header("Location: register.php#$msg");
+    exit();
+  }  if(empty($password)){
+    $msg = "La password è un campo obbligatorio";
+    header("Location: register.php#$msg");
+    exit();
+  }
+
   //Controllo se l'email è già esistente
   if($stmt->rowCount() > 0){
-    echo 'email già esistente';
+    $msg = "Email già esistente";
+    header("Location: register.php#$msg");
+    exit;
   }else{
     //registro il nuovo utente
     $q = $conn->prepare("INSERT INTO utenti (nome, cognome, email, password) VALUES (:firstname, :lastname, :email, :password)");
@@ -63,6 +85,7 @@ function test_input($data) {
 </head>
 <body>
   <div class="container">
+  <div id="feedback-container" class="hidden"></div>
     <h1>Crea il tuo account</h1>
     <div class="form-container">
     <form action="register.php" method="post">
@@ -93,4 +116,24 @@ function test_input($data) {
   </div>
   
 </body>
+
+<script>
+// Estraggo il messaggio dalla URL
+let msg = decodeURIComponent(window.location.hash.substr(1));
+
+// Se il messaggio di feedback esiste, lo visualizzo
+if (msg) {
+  // Creo un elemento HTML per il messaggio di feedback
+  let feedback = document.createElement("div");
+  feedback.classList.add("feedback-message");
+  feedback.textContent = msg;
+
+  // Aggiungo l'elemento HTML al documento
+  let container = document.getElementById("feedback-container");
+  container.appendChild(feedback);
+
+  // Mostro il contenitore
+  container.classList.remove("hidden");
+}
+</script>
 </html>

@@ -24,13 +24,13 @@
 
       $q = $conn->prepare("SELECT * FROM utenti WHERE email = :email");
       $q->bindParam(':email', $email); 
-      // $q->bindParam(':password', $password); 
     
       //esecuzione
       $q->execute(); // eseguo la query
 
       $row = $q->fetch();
 
+      //controllo dei dati inseriti
       if ($row) {
         if (password_verify($password, $row['password'])) {
         //Imposto la variabile di sessione con l'id dell'utente
@@ -38,11 +38,22 @@
 
         //Reindirizzo l'utente alla sua pagina di profilo
         header('Location: home.php');
+
+        }elseif($email != $row['email']){
+          $msg = "Email non corretta";
+
+          header("Location: index.php#$msg");
+
+        }else{
+          $msg = "Password non corretta";
+
+          header("Location: index.php#$msg");
         }
+
       } else{
         // Messaggio da mostrare all'utente
         $msg = "Utente non trovato";
-
+        
         header("Location: index.php#$msg");
         exit;
       }
