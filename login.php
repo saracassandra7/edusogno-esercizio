@@ -1,6 +1,5 @@
 <?php
   include "db_conn.php";
-  // include "register.php";
 
   function validate($data){
     $data = trim($data);
@@ -52,7 +51,7 @@
 
       } else{
         // Messaggio da mostrare all'utente
-        $msg = "Utente non trovato";
+        $msg= "Utente non trovato";
         
         header("Location: index.php#$msg");
         exit;

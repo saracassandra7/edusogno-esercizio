@@ -1,0 +1,42 @@
+.vector-1, .vector-4, .vector-5{
+  max-width: 98.5vw;
+
+}
+
+.vector-1{
+  position: absolute;
+  width: 1544px;
+  height: 152px;
+  right: 0;
+  bottom: 0;
+  z-index:-1;
+}
+
+.vector-4{
+  position: absolute;
+  height: 46vh;
+  left: -0.3vw;
+  top: 54vh;
+  z-index:-1;
+  background: transparent;
+  transform: rotate(2.29deg);
+
+}
+
+.vector-5{
+  position: absolute;
+  height: 27vh;
+  top: 63vh;
+  background: transparent;
+  z-index:-1;
+}
+
+.group-201{
+  position:absolute;
+  left:80vw;
+  bottom:5.5vh;
+}
+
+.ellipse-12{
+
+}

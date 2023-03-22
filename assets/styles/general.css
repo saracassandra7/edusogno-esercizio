@@ -19,13 +19,18 @@ body{
   display: none;
 }
 .feedback-message {
-  background-color: #f8d7da;
-  border: 1px solid #cf9096;
-  color: #721c24;
+  background-color: #dde9e5;
+  border: 1px solid #96b5f0;
+  color: #3d3f96;
   padding: 20px;
   margin: 20px;
   border-radius: 10px;
   text-align: center;
+  position: absolute;
+  z-index: 999;
+  top: 15%;
+  left: 13%;
+  width: 70vw;
 }
 
 h1{
@@ -48,6 +53,10 @@ h1{
   width: 60%;
   margin-bottom: 50px;
   text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  z-index: 999;
 }
 
 .form-container label{
@@ -89,4 +98,15 @@ h1{
 .form-container p{
   color: #134077;
   padding-bottom: 30px;
+}
+
+/* background */
+
+.vector-1{
+  position: absolute;
+  width: 107vw;
+  height: 22vh;
+  left: -0.2vw;
+  bottom:-30px;
+  z-index:-1;
 }

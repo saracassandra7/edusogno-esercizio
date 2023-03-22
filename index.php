@@ -1,5 +1,6 @@
 <?php
   include 'partials/header.html';
+  require __DIR__ . "/partials/background.php";
   session_start();
 
   $token = bin2hex(random_bytes(32));
@@ -39,6 +40,8 @@
         <button type="submit">Login</button> <br>
 
         <p>Non hai ancora un profilo? <a href="register.php">Registrati</a></p>
+
+        <p>Hai dimenticato la password?<a href="reset.php"> Reset</a></p>
 
     </form>
   </div>
