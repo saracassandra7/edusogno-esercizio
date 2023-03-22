@@ -36,7 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //salvo l'ultimo id inserito in sessione
     $_SESSION['id'] = $conn->lastInsertId();
   
-    // header('Location: home.php');
     header('Location: home.php');
   };
 
@@ -59,7 +58,7 @@ function test_input($data) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/styles/style.css">
+  <link rel="stylesheet" href="./assets/styles/general.css">
   <title>Edusogno</title>
 </head>
 <body>

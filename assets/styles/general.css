@@ -4,14 +4,27 @@
   box-sizing: border-box;
 }
 
+body{
+  background-color: lightskyblue;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .container{
   width: 90%;
   margin: 0 auto;
 }
 
-body{
-  background-color: lightskyblue;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+#feedback-container.hidden {
+  display: none;
+}
+.feedback-message {
+  background-color: #f8d7da;
+  border: 1px solid #cf9096;
+  color: #721c24;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 h1{
@@ -36,7 +49,7 @@ h1{
 .form-container{
   margin: 0 auto;
   border: 1px solid #134077;
-  background: #FFFFFF;
+  background: white;
   border-radius: 19px;
   padding: 30px 20px;
   width: 60%;

@@ -39,18 +39,22 @@
         //Reindirizzo l'utente alla sua pagina di profilo
         header('Location: home.php');
         }
+      } else{
+        // Messaggio da mostrare all'utente
+        $msg = "Utente non trovato";
+
+        header("Location: index.php#$msg");
+        exit;
       }
 
-      echo 'utente non trovato'; die;
-
-      // var_dump($row); die;
-
-      if(empty($username)){
-        header("Location: index.php?error=Username is required");
+      if(empty($email)){
+        $msg = "Inserisci la tua email";
+        header("Location: index.php#$msg");
         exit();
       }
       else if(empty($password)) {
-        header("Location: index.php?error=Password is required");
+        $msg = "Inserisci la password";
+        header("Location: index.php#$msg");
         exit();
       }
     }
