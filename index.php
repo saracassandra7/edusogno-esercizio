@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container profile-container">
   <div id="feedback-container" class="hidden"></div>
   <h1>Hai già un account?</h1>
   <div class="form-container">
@@ -32,10 +32,10 @@
         <?php } ?>
 
         <label for="email">Email</label>
-        <input type="text" name="email" placeholder="inserisci la tua email" value="email@email.email"> <br>
+        <input type="text" name="email" placeholder="inserisci la tua email"> <br>
 
         <label for="password">Password</label>
-        <input type="password" name="password" placeholder="inserisci la password" value="password"> <br>
+        <input type="password" name="password" placeholder="inserisci la password"> <br>
 
         <button type="submit">Login</button> <br>
 

@@ -1,5 +1,5 @@
 <?php
-
+require __DIR__ . "/partials/background.php";
 include "db_conn.php";
 include 'partials/header.html';
 
@@ -36,7 +36,7 @@ $row = $query->fetch(PDO::FETCH_ASSOC);
   <title>Edusogno</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container profile-container">
 
     <h1 class="welcome-title">Ciao <?php echo $row['nome'] . ' ' . $row['cognome'] ?>, ecco i tuoi eventi</h1>
 

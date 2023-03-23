@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . "/partials/background.php";
 include 'db_conn.php';
 include 'partials/header.html';
 
@@ -36,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: register.php#$msg");
     exit();
   }
+
 
   //Controllo se l'email è già esistente
   if($stmt->rowCount() > 0){
@@ -91,22 +93,22 @@ function test_input($data) {
     <form action="register.php" method="post">
     <div>
       <label for="firstname">Inserisci il nome*</label>
-      <input type="text" name="firstname" id="firstname" value="nome">
+      <input type="text" name="firstname" id="firstname">
     </div>
 
     <div>
       <label for="lastname">Inserisci il cognome*</label>
-      <input type="text" name="lastname" id="lastname" value="cognome">
+      <input type="text" name="lastname" id="lastname">
     </div>
 
     <div>
       <label for="email">Inserisci l'email*</label>
-      <input type="email" name="email" id="email" value="email@email.email">
+      <input type="email" name="email" id="email">
     </div>
 
     <div>
       <label for="password">Inserisci la password*</label>
-      <input type="password" name="password" id="password" value="password">
+      <input type="password" name="password" id="password">
     </div>
 
     <button type="submit">Registrati</button>

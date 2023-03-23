@@ -44,7 +44,7 @@ if (isset($_POST['email'])) {
     $mail->Port = 2525;
     $mail->IsHTML(true);
    
-    $mail->setFrom('saracassandra7@gmail.com', 'Sara');
+    $mail->setFrom('edusognoesercizio@mail.com', 'Sara');
     $mail->addAddress($to, 'Utente');
     $mail->Subject = 'Richiesta di reset password';
     $mail->Body = "Se hai richiesto di resettare la password clicca <a href='http://localhost/edusogno-esercizio/new_password.php?token=" . "$token'".">questo link</a>" ;

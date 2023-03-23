@@ -9,13 +9,14 @@
   height: 152px;
   right: 0;
   bottom: 0;
-  z-index:-1;
+  z-index: 3;
 }
 
 .vector-4{
   position: absolute;
+  width: 99%;
   height: 46vh;
-  left: -0.3vw;
+  left: -0vw;
   top: 54vh;
   z-index:-1;
   background: transparent;
@@ -27,6 +28,7 @@
   position: absolute;
   height: 27vh;
   top: 63vh;
+  left: -0vw;
   background: transparent;
   z-index:-1;
 }
@@ -38,5 +40,15 @@
 }
 
 .ellipse-12{
+  position: absolute;
+    width: 10vw;
+    right: 20px;
+    top: 50%;
 
+}
+
+.ellipse-13{
+  position: absolute;
+  height: 300px;
+  top: 40%;
 }
