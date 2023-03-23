@@ -69,13 +69,6 @@ if (isset($_POST['email'])) {
   <title>Reset Password</title>
 </head>
 <body>
-  
-  <!-- <form action="" method="post">
-    <label for="email">Inserisci la tua mail</label>
-    <input type="email" name="email">
-    <input type="submit">
-  </form> -->
-  
   <div class="container">
   <h1 class=" my-3">Reset password</h1>
 <form action="" method="post" class="row g-3">

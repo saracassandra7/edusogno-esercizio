@@ -18,7 +18,7 @@
   height: 46vh;
   left: -0vw;
   top: 54vh;
-  z-index:-1;
+  z-index: 2;
   background: transparent;
   transform: rotate(2.29deg);
 
@@ -27,16 +27,18 @@
 .vector-5{
   position: absolute;
   height: 27vh;
+  width: 99%;
   top: 63vh;
   left: -0vw;
   background: transparent;
-  z-index:-1;
+  z-index:1;
 }
 
 .group-201{
   position:absolute;
   left:80vw;
   bottom:5.5vh;
+  z-index: 2;
 }
 
 .ellipse-12{
@@ -44,6 +46,7 @@
     width: 10vw;
     right: 20px;
     top: 50%;
+    z-index: 2;
 
 }
 
@@ -51,4 +54,5 @@
   position: absolute;
   height: 300px;
   top: 40%;
+  z-index: 2;
 }

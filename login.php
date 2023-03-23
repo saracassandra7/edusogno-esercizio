@@ -20,7 +20,18 @@
 
       $email = validate($_POST['email']);
       $password = validate($_POST['password']);
-
+      
+      if(empty($email)){
+        $msg = "Inserisci la tua email";
+        header("Location: index.php#$msg");
+        exit();
+      }
+      else if(empty($password)) {
+        $msg = "Inserisci la password";
+        header("Location: index.php#$msg");
+        exit();
+      }
+      
       $q = $conn->prepare("SELECT * FROM utenti WHERE email = :email");
       $q->bindParam(':email', $email); 
     
@@ -57,16 +68,6 @@
         exit;
       }
 
-      if(empty($email)){
-        $msg = "Inserisci la tua email";
-        header("Location: index.php#$msg");
-        exit();
-      }
-      else if(empty($password)) {
-        $msg = "Inserisci la password";
-        header("Location: index.php#$msg");
-        exit();
-      }
     }
   }
 ?>

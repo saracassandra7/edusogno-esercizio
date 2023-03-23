@@ -46,12 +46,6 @@ $row = $q->fetch();
   <title>Nuova password</title>
 </head>
 <body>
-  
-<!-- <form action="" method="post">
-  <input type="text" name="password" placeholder="nuova password">
-  <input type="text" name="new_password" placeholder="re inserisci la nuova password">
-  <input type="submit">
-</form> -->
 
 <div class="container">
   <h1 class="my-3">Richiesta di nuova password</h1>

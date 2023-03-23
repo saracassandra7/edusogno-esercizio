@@ -10,18 +10,6 @@ $query = $conn->prepare("SELECT * FROM utenti WHERE id = :id");
 $query->bindParam(':id', $id);
 $query->execute();
 $row = $query->fetch(PDO::FETCH_ASSOC);
-// echo $row['nome'] . ' ' . $row['cognome'] .  '<br><br>' . $row['id']. '<br>';
-
-//recupero dati dalla tabella eventi
-// $email = $row['email'];
-// $stmt = $conn->query("SELECT * FROM eventi WHERE attendees LIKE '%{$email}%' ");
-// $event_row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-// while ($event_row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-// echo "Partecipanti: " . $event_row["attendees"] . "<br>";
-// echo "Evento: " . $event_row["nome_evento"] . "<br>";
-// echo "Data: " . $event_row["data_evento"] . "<br>";
-// }
 
 ?>
 
